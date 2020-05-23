@@ -5,6 +5,16 @@ In this kata you need to check the provided array (x) for good ideas 'good' and 
  if there are more than 2 return 'I smell a series!'. If there are no good ideas, as is often the case, return 'Fail!'.
 */
 
-function well(x){
+const well = (x) => {
+  let count = 0;
+  for(let i = 0; i < x.length; i++) {
+    if(x[i] === 'good') {
+      count++
+    }
+    if(count > 2) {
+      return 'I smell a series!'
+    }
+  }
 
+  return count > 0 && count < 3 ? 'Publish!' : 'Fail!'
 }
